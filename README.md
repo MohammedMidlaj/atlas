@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Atlas
+
+Atlas is a personal travel memory archive built with Next.js 16 and TypeScript. It combines an interactive world map, travel memories, wishlist destinations, and simple usage statistics into a calm journal-style interface.
+
+## Features
+
+- **Home dashboard** with quick access to recent memories, wishlist preview, and travel stats.
+- **Interactive world map** with visited and wishlist countries.
+- **Memories journal** with cards for each travel memory.
+- **Memory management** including view, edit, and delete actions.
+- **Wishlist page** for future destinations.
+- **Public profile page** with travel highlights and featured memories.
+- Built using **Next.js App Router**, **Tailwind CSS**, and **React**.
+
+## Project Structure
+
+- `app/` — Next.js application routes and layout.
+- `components/` — UI components for the map, memories, layout, and shared controls.
+- `contexts/` — client state providers for memories and countries.
+- `lib/` — data definitions, mock content, and helper utilities.
+- `public/` — static assets used by the app.
 
 ## Getting Started
 
-First, run the development server:
+### Requirements
+
+- Node.js 20+ recommended
+- npm, yarn, or pnpm
+
+### Install
+
+```bash
+npm install
+```
+
+### Run locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000` in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+### Lint
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run lint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Routes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `/` — Home dashboard
+- `/map` — Interactive world map view
+- `/memories` — Memory journal listing
+- `/memories/new` — Add a new memory
+- `/memories/[id]` — Memory detail view
+- `/memories/[id]/edit` — Edit a memory
+- `/wishlist` — Travel wishlist
+- `/profile/[username]` — Public profile view
 
-## Deploy on Vercel
+## Built With
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [Next.js](https://nextjs.org/) 16.2.5
+- [React](https://reactjs.org/) 19.2.4
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/) 4
+- [D3 Geo](https://github.com/d3/d3-geo) and [topojson-client](https://github.com/topojson/topojson) for map rendering
+- [Framer Motion](https://www.framer.com/motion/) for animation support
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notes
+
+This project currently uses in-memory/mock data from `lib/data/`. You can extend it with a backend or database to persist user memories and wishlist items.
+
+## License
+
+This repository is private by default and does not include a license file.
