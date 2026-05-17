@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7c5cff" stop-opacity="0.75"/>
+      <stop offset="0.55" stop-color="#00d4ff" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#07080c" stop-opacity="1"/>
+    </linearGradient>
+    <radialGradient id="r" cx="30%" cy="25%" r="80%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1400" height="900" fill="url(#g)"/>
+  <rect width="1400" height="900" fill="url(#r)"/>
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.10">
+    <path d="M0 640 C 280 560, 420 740, 700 660 C 980 580, 1120 720, 1400 620" stroke-width="3"/>
+    <path d="M0 720 C 320 620, 460 820, 720 740 C 980 660, 1120 800, 1400 700" stroke-width="2"/>
+  </g>
+  <g fill="#ffffff" fill-opacity="0.86" font-family="ui-sans-serif, system-ui" letter-spacing="2">
+    <text x="64" y="96" font-size="22" opacity="0.85">MEMORY</text>
+    <text x="64" y="150" font-size="56" font-weight="600">Spiti Valley</text>
+    <text x="64" y="192" font-size="18" fill-opacity="0.62">Himachal Pradesh · Oct 2024</text>
+  </g>
+</svg>
+

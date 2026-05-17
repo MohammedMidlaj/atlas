@@ -1,26 +1,183 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Core neutrals */
+  --atlas-bg: #07080c;
+  --atlas-bg2: #0b0d14;
+  --atlas-surface: rgba(255, 255, 255, 0.06);
+  --atlas-surface2: rgba(255, 255, 255, 0.085);
+  --atlas-surface3: rgba(255, 255, 255, 0.12);
+  --atlas-border: rgba(255, 255, 255, 0.10);
+  --atlas-border2: rgba(255, 255, 255, 0.16);
+
+  /* Text */
+  --atlas-text: rgba(255, 255, 255, 0.92);
+  --atlas-muted: rgba(255, 255, 255, 0.62);
+  --atlas-subtle: rgba(255, 255, 255, 0.42);
+
+  /* Accents */
+  --atlas-accent: #7c5cff; /* amethyst */
+  --atlas-accent2: #00d4ff; /* arctic cyan */
+  --atlas-gold: #f5d06f;
+  --atlas-success: #3ee7a3;
+  --atlas-danger: #ff5c7a;
+
+  /* Atmosphere */
+  --atlas-glow: 124 92 255;
+  --atlas-glow2: 0 212 255;
+  --atlas-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  --atlas-shadow-soft: 0 14px 40px rgba(0, 0, 0, 0.35);
+
+  --atlas-map-locked-fill: rgba(255, 255, 255, 0.08);
+  --atlas-map-visited-fill: rgba(62, 231, 163, 0.65);
+  --atlas-map-wishlist-fill: rgba(0, 212, 255, 0.16);
+  --atlas-map-locked-stroke: rgba(255, 255, 255, 0.16);
+  --atlas-map-visited-stroke: rgba(62, 231, 163, 0.95);
+  --atlas-map-wishlist-stroke: rgba(0, 212, 255, 0.75);
+  --atlas-map-3d-locked-depth: rgba(255, 255, 255, 0.06);
+  --atlas-map-3d-visited-depth: rgba(62, 231, 163, 0.34);
+  --atlas-map-3d-wishlist-depth: rgba(0, 212, 255, 0.16);
+  --atlas-map-3d-visited-fill: rgba(62, 231, 163, 0.46);
+  --atlas-map-3d-wishlist-fill: rgba(0, 212, 255, 0.16);
+
+  /* Motion */
+  --atlas-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --atlas-duration: 260ms;
+}
+
+html[data-theme="light"] {
+  --atlas-bg: #f6f7fb;
+  --atlas-bg2: #e9edf4;
+  --atlas-surface: rgba(15, 23, 42, 0.04);
+  --atlas-surface2: rgba(15, 23, 42, 0.06);
+  --atlas-surface3: rgba(15, 23, 42, 0.08);
+  --atlas-border: rgba(15, 23, 42, 0.12);
+  --atlas-border2: rgba(15, 23, 42, 0.16);
+  --atlas-text: rgba(15, 23, 42, 0.94);
+  --atlas-muted: rgba(15, 23, 42, 0.64);
+  --atlas-subtle: rgba(15, 23, 42, 0.44);
+  --atlas-glow: 124 92 255;
+  --atlas-glow2: 0 212 255;
+  --atlas-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+  --atlas-shadow-soft: 0 10px 24px rgba(15, 23, 42, 0.06);
+  --atlas-map-locked-fill: rgba(15, 23, 42, 0.08);
+  --atlas-map-visited-fill: rgba(62, 231, 163, 0.38);
+  --atlas-map-wishlist-fill: rgba(0, 212, 255, 0.12);
+  --atlas-map-locked-stroke: rgba(15, 23, 42, 0.16);
+  --atlas-map-visited-stroke: rgba(62, 231, 163, 0.95);
+  --atlas-map-wishlist-stroke: rgba(0, 212, 255, 0.7);
+  --atlas-map-3d-locked-depth: rgba(15, 23, 42, 0.12);
+  --atlas-map-3d-visited-depth: rgba(62, 231, 163, 0.28);
+  --atlas-map-3d-wishlist-depth: rgba(0, 212, 255, 0.085);
+  --atlas-map-3d-visited-fill: rgba(62, 231, 163, 0.38);
+  --atlas-map-3d-wishlist-fill: rgba(0, 212, 255, 0.12);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* App defaults */
+  --color-background: var(--atlas-bg);
+  --color-foreground: var(--atlas-text);
+
+  /* Atlas palette → Tailwind tokens (bg-atlas-*, text-atlas-*) */
+  --color-atlas-bg: var(--atlas-bg);
+  --color-atlas-bg2: var(--atlas-bg2);
+  --color-atlas-surface: var(--atlas-surface);
+  --color-atlas-surface2: var(--atlas-surface2);
+  --color-atlas-surface3: var(--atlas-surface3);
+  --color-atlas-border: var(--atlas-border);
+  --color-atlas-border2: var(--atlas-border2);
+  --color-atlas-text: var(--atlas-text);
+  --color-atlas-muted: var(--atlas-muted);
+  --color-atlas-subtle: var(--atlas-subtle);
+  --color-atlas-accent: var(--atlas-accent);
+  --color-atlas-accent2: var(--atlas-accent2);
+  --color-atlas-gold: var(--atlas-gold);
+  --color-atlas-success: var(--atlas-success);
+  --color-atlas-danger: var(--atlas-danger);
+
+  /* Typography */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background: radial-gradient(
+      1200px 900px at 10% 10%,
+      rgba(var(--atlas-glow2) / 0.08),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 700px at 70% 20%,
+      rgba(var(--atlas-glow) / 0.10),
+      transparent 52%
+    ),
+    linear-gradient(180deg, var(--atlas-bg), var(--atlas-bg2));
+  color: var(--atlas-text);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI,
+    Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+::selection {
+  background: rgba(var(--atlas-glow) / 0.28);
+}
+
+select,
+select option {
+  color: #111 !important;
+  background: #fff !important;
+}
+
+select {
+  appearance: auto;
+  -webkit-appearance: auto;
+  -moz-appearance: auto;
+}
+
+/* Subtle grid noise overlay (cheap “premium” texture) */
+.atlas-noise {
+  position: relative;
+}
+.atlas-noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 0.7px, transparent 0.8px);
+  background-size: 22px 22px;
+  mask-image: radial-gradient(60% 65% at 50% 35%, #000 40%, transparent 78%);
+}
+
+/* Glass card baseline */
+.atlas-glass {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.045)
+  );
+  border: 1px solid var(--atlas-border);
+  box-shadow: var(--atlas-shadow-soft);
+  backdrop-filter: blur(12px);
+}
+
+/* Shimmer skeleton */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.12) 45%,
+    rgba(255, 255, 255, 0.06) 100%
+  );
+  background-size: 220% 100%;
+  animation: atlas-shimmer 1.35s var(--atlas-ease) infinite;
+}
+
+@keyframes atlas-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -120% 0;
+  }
 }

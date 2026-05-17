@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f5d06f" stop-opacity="0.70"/>
+      <stop offset="0.5" stop-color="#7c5cff" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#07080c" stop-opacity="1"/>
+    </linearGradient>
+    <radialGradient id="r" cx="70%" cy="30%" r="85%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1400" height="900" fill="url(#g)"/>
+  <rect width="1400" height="900" fill="url(#r)"/>
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.10">
+    <path d="M90 680 C 260 540, 410 760, 590 640 C 760 520, 920 720, 1120 600 C 1250 520, 1340 580, 1400 560" stroke-width="3"/>
+  </g>
+  <g fill="#ffffff" fill-opacity="0.86" font-family="ui-sans-serif, system-ui" letter-spacing="2">
+    <text x="64" y="96" font-size="22" opacity="0.85">MEMORY</text>
+    <text x="64" y="150" font-size="56" font-weight="600">Tbilisi</text>
+    <text x="64" y="192" font-size="18" fill-opacity="0.62">Georgia · May 2025</text>
+  </g>
+</svg>
+
